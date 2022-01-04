@@ -9,7 +9,7 @@
 - [Listas](https://github.com/JoseAndresHV-UPSA/estructura-datos-si210/tree/master/LISTAS)
 
 ### Configuración para Visual Studio 2019
-Para descargar la extensiónn:
+Para descargar la extensión:
  1. Ir a 'Extensions' -> 'Manage Extensions'
  2. Buscar 'C++ Windows Forms'
  3. Descargar 'C++/CLR Windows Forms for Visual Studio 2019'
