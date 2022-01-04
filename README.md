@@ -1,6 +1,6 @@
 # Estructura de Datos (SI210)
 
-### Contenido:
+### Contenido
 - [Numeros](https://github.com/JoseAndresHV-UPSA/estructura-datos-si210/tree/master/NUMEROS)
 - [Vectores](https://github.com/JoseAndresHV-UPSA/estructura-datos-si210/tree/master/VECTORES)
 - [Matrices](https://github.com/JoseAndresHV-UPSA/estructura-datos-si210/tree/master/MATRICES)
