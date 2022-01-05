@@ -21,7 +21,7 @@ Para la creación del proyecto en Visual Studio:
 2. Una vez creado, agregar nuevo elemento `CLR` -> `Windows Forms`
 3. Cerrar y volver a abrir proyecto
 4. Dentro de `MyForm.cpp` copiar el siguiente código:
-```
+```cpp
 #include "MyForm.h"
 
 using namespace NOMBREPROYECTO;
