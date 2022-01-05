@@ -1,4 +1,0 @@
-C:\Users\josea\source\repos\PILAS\Debug\PILAS.vcxproj.AssemblyReference.cache
-C:\Users\josea\source\repos\PILAS\Debug\PILAS.exe
-C:\Users\josea\source\repos\PILAS\Debug\PILAS.Form1.resources
-C:\Users\josea\source\repos\PILAS\Debug\PILAS.vcxproj.GenerateResource.cache
