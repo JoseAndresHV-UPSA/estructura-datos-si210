@@ -18,7 +18,7 @@ Para la instalación en Visual Studio Installer:
 
 Para la creación del proyecto en Visual Studio:
 1. Crear nuevo proyecto `CLR Empty Project (.NET Framework)`
-2. Una vez creado, agregar nuevo elemento CLR -> `Windows Forms`
+2. Una vez creado, agregar nuevo elemento `CLR` -> `Windows Forms`
 3. Cerrar y volver a abrir proyecto
 4. Dentro de `MyForm.cpp` copiar el siguiente código:
 ```
@@ -37,8 +37,8 @@ int main(array<String^>^ arg)
 ```
 Nota: Cambiar `NOMBREPROYECTO` por el nombre del proyecto actual.
 
-5. Ir a Propiedades del proyecto -> Linker -> System -> SubSystem
+5. Ir a `Propiedades del proyecto` -> `Linker` -> `System` -> `SubSystem`
    - Seleccionar `Windows (/SUBSYSTEM:WINDOWS)`
-6. Ir a Propiedades del proyecto -> Linker -> Advanced -> EntryPoint
+6. Ir a `Propiedades del proyecto` -> `Linker` -> `Advanced` -> `EntryPoint`
    - Escribir `main`
 
