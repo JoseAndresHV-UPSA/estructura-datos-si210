@@ -1,24 +1,44 @@
 # Estructura de Datos (SI210)
 
 ### Contenido
-- [Numeros](https://github.com/JoseAndresHV-UPSA/estructura-datos-si210/tree/master/NUMEROS)
+- [Enteros](https://github.com/JoseAndresHV-UPSA/estructura-datos-si210/tree/master/ENTEROS)
 - [Vectores](https://github.com/JoseAndresHV-UPSA/estructura-datos-si210/tree/master/VECTORES)
 - [Matrices](https://github.com/JoseAndresHV-UPSA/estructura-datos-si210/tree/master/MATRICES)
 - [Pilas](https://github.com/JoseAndresHV-UPSA/estructura-datos-si210/tree/master/PILAS)
+- [Pilas Dinámicas])
 - [Colas](https://github.com/JoseAndresHV-UPSA/estructura-datos-si210/tree/master/COLAS)
-- [Listas](https://github.com/JoseAndresHV-UPSA/estructura-datos-si210/tree/master/LISTAS)
+- [Colas Circulares]()
+- [Colas Dinámicas]()
+- [Proyectos]()
 
-### Configuración para Visual Studio 2019
-Para descargar la extensión:
- 1. Ir a 'Extensions' -> 'Manage Extensions'
- 2. Buscar 'C++ Windows Forms'
- 3. Descargar 'C++/CLR Windows Forms for Visual Studio 2019'
+### Configuración para Visual Studio
+Para la instalación en Visual Studio Installer:
+1. Seleccionar el Workloard: 'Desktop development with C++'
+2. Dentro de opcional marcar: 'C++/CLI support'
 
-Para la creación del proyecto:
- 1. Crear nuevo proyecto -> 'CppCLR_WinformsProjekt'
- 2. (Opcional) Renombrar las carpetas:
-    - 'Headerdateien' -> Header Files
-    - 'Quelldateien' -> Source Files
-    - 'Ressourcendateien' -> Resource Files
+Para la creación del proyecto en Visual Studio:
+1.  Crear nuevo proyecto: 'CLR Empty Project (.NET Framework)'
+2. Una vez creado, agregar nuevo elemento: 'CLR->Windows Forms'
+3. Cerrar y volver a abrir proyecto
+4. Dentro de MyForm.cpp copiar el siguiente codigo:
+```
+#include "MyForm.h"
 
+using namespace NOMBREPROYECTO;
+
+[STAThread]
+int main(array<String^>^ arg)
+{
+	Application::EnableVisualStyles();
+	Application::SetCompatibleTextRenderingDefault(false);
+	Application::Run(gcnew NOMBREPROYECTO::MyForm());
+	return 0;
+}
+```
+Nota: Cambiar NOMBREPROYECTO por el nombre del proyecto actual.
+
+5. Ir a Propiedades del proyecto -> Linker -> System -> SubSystem
+   - Seleccionar 'Windows (/SUBSYSTEM:WINDOWS)'
+6. Ir a Propiedades del proyecto -> Linker -> Advanced -> EntryPoint
+   - Escribir 'main'
 
