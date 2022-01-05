@@ -1,10 +1,9 @@
-#include "pch.h"
 #include "Matriz.h"
 
 Matriz::Matriz(void)
 {
 	filas = 0;
-	colums = 0;
+	columnas = 0;
 	for (int i = 0; i < N; i++) {
 		for (int j = 0; j < M; j++)
 		{
@@ -23,14 +22,14 @@ void Matriz::setFilas(int f)
 	filas = f;
 }
 
-int Matriz::getColums()
+int Matriz::getColumnas()
 {
-	return colums;
+	return  columnas;
 }
 
-void Matriz::setColums(int c)
+void Matriz::setColumnas(int c)
 {
-	colums = c;
+	columnas = c;
 }
 
 int Matriz::getValor(int f, int c)

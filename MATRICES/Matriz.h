@@ -7,7 +7,7 @@ class Matriz
 {
 private:
 	int filas;
-	int colums;
+	int columnas;
 	int m[N][M];
 
 public:
@@ -15,8 +15,8 @@ public:
 
 	int getFilas();
 	void setFilas(int f);
-	int getColums();
-	void setColums(int c);
+	int getColumnas();
+	void setColumnas(int c);
 	int getValor(int f, int c);
 	void setValor(int val, int f, int c);
 

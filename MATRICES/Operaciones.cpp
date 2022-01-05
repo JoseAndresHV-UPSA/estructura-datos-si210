@@ -1,9 +1,66 @@
-#include "pch.h"
 #include "Operaciones.h"
+
+Operaciones::Operaciones(void)
+{
+}
+
+Operaciones::Operaciones(Matriz matriz)
+{
+	thisMatriz(matriz);
+}
+
+void Operaciones::guardar(DataGridView^ dgv)
+{
+	int n = dgv->RowCount;
+	int m = dgv->ColumnCount;
+	setFilas(n);
+	setColumnas(m);
+
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < m; j++)
+		{
+			int val = Convert::ToInt32(dgv->Rows[i]->Cells[j]->Value);
+			setValor(val, i, j);
+		}
+	}
+}
+
+void Operaciones::mostrar(DataGridView^ dgv)
+{
+	int n = getFilas();
+	int m = getColumnas();
+	dgv->RowCount = n;
+	dgv->ColumnCount = m;
+
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < m; j++)
+		{
+			int val = getValor(i, j);
+			dgv->Rows[i]->Cells[j]->Value = val;
+		}
+	}
+}
+
+void Operaciones::dimensionar(DataGridView^ dgv, TextBox^ tbFilas, TextBox^ tbCols)
+{
+	int n = Convert::ToInt32(tbFilas->Text);
+	int m = Convert::ToInt32(tbCols->Text);
+	dgv->RowCount = n;
+	dgv->ColumnCount = m;
+}
+
+void Operaciones::limpiar(DataGridView^ dgv)
+{
+	dgv->RowCount = 0;
+	dgv->ColumnCount = 0;
+	thisMatriz(Matriz());
+}
 
 bool Operaciones::esTriangularSup()
 {
-	int n = getFilas(), m = getColums();
+	int n = getFilas(), m = getColumnas();
 	for (int i = 0; i < n; i++)
 	{
 		for (int j = 0; j < m; j++)
@@ -16,12 +73,12 @@ bool Operaciones::esTriangularSup()
 	return true;
 }
 
-Operaciones Operaciones::transpuesta()
+Matriz Operaciones::transpuesta()
 {
-	Operaciones t;
-	int n = getFilas(), m = getColums();
-	t.setFilas(n);
-	t.setColums(m);
+	Matriz t;
+	int n = getFilas(), m = getColumnas();
+	t.setFilas(m);
+	t.setColumnas(n);
 	for (int i = 0; i < n; i++)
 	{
 		for (int j = 0; j < m; j++)
@@ -35,7 +92,9 @@ Operaciones Operaciones::transpuesta()
 
 void Operaciones::ordenar()
 {
-	int n = getFilas(), m = getColums();
+	int n = getFilas();
+	int m = getColumnas();
+
 	for (int i = 0; i < n; i++)
 	{
 		for (int j = 0; j < m; j++)
@@ -46,6 +105,7 @@ void Operaciones::ordenar()
 				{
 					int val1 = getValor(i, j);
 					int val2 = getValor(k, l);
+
 					if (val2 > val1)
 					{
 						setValor(val2, i, j);
@@ -59,12 +119,15 @@ void Operaciones::ordenar()
 
 bool Operaciones::existerValor(int valor)
 {
-	int n = getFilas(), m = getColums();
+	int n = getFilas();
+	int m = getColumnas();
+
 	for (int i = 0; i < n; i++)
 	{
 		for (int j = 0; j < m; j++)
 		{
 			int val = getValor(i, j);
+
 			if (val == valor)
 				return true;
 		}
@@ -75,12 +138,15 @@ bool Operaciones::existerValor(int valor)
 int Operaciones::contarValor(int valor)
 {
 	int cant = 0;
-	int n = getFilas(), m = getColums();
+	int n = getFilas();
+	int m = getColumnas();
+
 	for (int i = 0; i < n; i++)
 	{
 		for (int j = 0; j < m; j++)
 		{
 			int val = getValor(i, j);
+
 			if (val == valor)
 				cant++;
 		}
@@ -90,48 +156,56 @@ int Operaciones::contarValor(int valor)
 
 void Operaciones::sumarFilas()
 {
-	int n = getFilas(), m = getColums();
-	setColums(m + 1);
+	int n = getFilas();
+	int m = getColumnas();
+	setColumnas(m + 1);
+
 	for (int i = 0; i < n; i++)
 	{
 		int suma = 0;
+
 		for (int j = 0; j < m; j++)
-		{
 			suma += getValor(i, j);
-		}
+
 		setValor(suma, i, m);
 	}
 }
 
-void Operaciones::sumarColums()
+void Operaciones::sumarColumnas()
 {
-	int n = getFilas(), m = getColums();
+	int n = getFilas();
+	int m = getColumnas();
 	setFilas(n + 1);
+
 	for (int i = 0; i < n; i++)
 	{
 		int suma = 0;
+
 		for (int j = 0; j < m; j++)
-		{
 			suma += getValor(j, i);
-		}
+
 		setValor(suma, n, i);
 	}
 }
 
-Operaciones Operaciones::sumar(Operaciones m2)
+Matriz Operaciones::sumar(Matriz matriz)
 {
-	Operaciones result;
-	int f1 = getFilas(), c1 = getColums();
-	int f2 = m2.getFilas(), c2 = m2.getColums();
-	if (f1 == f2 && c1 == c2)
+	Matriz result;
+	int n1 = getFilas();
+	int m1 = getColumnas();
+	int n2 = matriz.getFilas();
+	int m2 = matriz.getColumnas();
+
+	if (n1 == n2 && m1 == m2)
 	{
-		result.setFilas(f1);
-		result.setColums(c1);
-		for (int i = 0; i < f1; i++)
+		result.setFilas(n1);
+		result.setColumnas(m1);
+
+		for (int i = 0; i < n1; i++)
 		{
-			for (int j = 0; j < c1; j++)
+			for (int j = 0; j < m1; j++)
 			{
-				int suma = getValor(i, j) + m2.getValor(i, j);
+				int suma = getValor(i, j) + matriz.getValor(i, j);
 				result.setValor(suma, i, j);
 			}
 		}
@@ -140,40 +214,31 @@ Operaciones Operaciones::sumar(Operaciones m2)
 	return result;
 }
 
-Operaciones Operaciones::multiplicar(Operaciones m2)
+Matriz Operaciones::multiplicar(Matriz matriz)
 {
-	Operaciones result;
-	int f1 = getFilas(), c1 = getColums();
-	int f2 = m2.getFilas(), c2 = m2.getColums();
-	if (c1 == f2)
+	Matriz result;
+	int n1 = getFilas();
+	int m1 = getColumnas();
+	int n2 = matriz.getFilas();
+	int m2 = matriz.getColumnas();
+
+	if (m1 == n2)
 	{
-		result.setFilas(f1);
-		result.setColums(c2);
-		for (int i = 0; i < f1; i++)
+		result.setFilas(n1);
+		result.setColumnas(m2);
+
+		for (int i = 0; i < n1; i++)
 		{
-			for (int j = 0; j < c2; j++)
+			for (int j = 0; j < m2; j++)
 			{
 				int suma = 0;
-				for (int k = 0; k < c1; k++)
-				{
-					suma += getValor(i, k) * m2.getValor(k, j);
-				}
+				for (int k = 0; k < m1; k++)
+					suma += getValor(i, k) * matriz.getValor(k, j);
+
 				result.setValor(suma, i, j);
 			}
 		}
 	}
 
 	return result;
-}
-
-void Operaciones::limpiar()
-{
-	setFilas(0);
-	setColums(0);
-	for (int i = 0; i < N; i++) {
-		for (int j = 0; j < M; j++)
-		{
-			setValor(0, i, j);
-		}
-	}
 }
