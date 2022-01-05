@@ -1,5 +1,11 @@
-#include "pch.h"
 #include "Vector.h"
+
+Vector::Vector(void)
+{
+	n = 0;
+	for (int i = 0; i < N; i++)
+		v[i] = 0;
+}
 
 int Vector::getValor(int pos)
 {
@@ -19,13 +25,6 @@ int Vector::tamano()
 void Vector::tamano(int t)
 {
 	n = t;
-}
-
-Vector::Vector(void)
-{
-	n = 0;
-	for (int i = 0; i < N; i++)
-		v[i] = 0;
 }
 
 void Vector::thisVector(Vector vector)

@@ -1,9 +1,47 @@
-#include "pch.h"
 #include "Operaciones.h"
 
 Operaciones::Operaciones(void)
 {
-	tamano(0);
+}
+
+Operaciones::Operaciones(Vector vector)
+{
+	thisVector(vector);
+}
+
+void Operaciones::guardar(DataGridView^ dgv)
+{
+	int n = dgv->ColumnCount;
+	tamano(n);
+	for (int i = 0; i < n; i++)
+	{
+		int val = Convert::ToInt32(dgv->Rows[0]->Cells[i]->Value);
+		setValor(val, i);
+	}
+}
+
+void Operaciones::mostrar(DataGridView^ dgv)
+{
+	int n = tamano();
+	dgv->ColumnCount = n;
+	dgv->RowCount = 1;
+	for (int i = 0; i < n; i++)
+	{
+		dgv->Rows[0]->Cells[i]->Value = getValor(i);
+	}
+}
+
+void Operaciones::dimensionar(DataGridView^ dgv, TextBox^ tb)
+{
+	int n = (Convert::ToInt32(tb->Text));
+	dgv->ColumnCount = n;
+	dgv->RowCount = 1;
+}
+
+void Operaciones::limpiar(DataGridView^ dgv)
+{
+	dgv->ColumnCount = 0;
+	thisVector(Vector());
 }
 
 void Operaciones::ordenar()
@@ -62,11 +100,4 @@ void Operaciones::eliminarPos(int p)
 	}
 	setValor(0, n - 1);
 	tamano(n - 1);
-}
-
-void Operaciones::limpiar()
-{
-	tamano(0);
-	for (int i = 0; i < N; i++)
-		setValor(0, i);
 }

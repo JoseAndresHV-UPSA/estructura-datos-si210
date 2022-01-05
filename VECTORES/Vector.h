@@ -9,12 +9,12 @@ private:
 	int n;
 
 public:
+	Vector(void);
+
 	int getValor(int pos);
 	void setValor(int val, int pos);
 	int tamano();
 	void tamano(int t);
-
-	Vector(void);
 
 	void thisVector(Vector vector);
 	Vector thisVector();
