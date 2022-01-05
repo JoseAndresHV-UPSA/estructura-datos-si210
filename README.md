@@ -13,14 +13,14 @@
 
 ### Configuración para Visual Studio
 Para la instalación en Visual Studio Installer:
-1. Seleccionar el Workloard 'Desktop development with C++'
-2. Dentro de opcional marcar 'C++/CLI support'
+1. Seleccionar el Workloard `Desktop development with C++`
+2. Dentro de opcional marcar `C++/CLI support`
 
 Para la creación del proyecto en Visual Studio:
-1. Crear nuevo proyecto 'CLR Empty Project (.NET Framework)'
-2. Una vez creado, agregar nuevo elemento 'CLR->Windows Forms'
+1. Crear nuevo proyecto `CLR Empty Project (.NET Framework)`
+2. Una vez creado, agregar nuevo elemento CLR -> `Windows Forms`
 3. Cerrar y volver a abrir proyecto
-4. Dentro de MyForm.cpp copiar el siguiente codigo:
+4. Dentro de `MyForm.cpp` copiar el siguiente código:
 ```
 #include "MyForm.h"
 
@@ -38,7 +38,7 @@ int main(array<String^>^ arg)
 Nota: Cambiar `NOMBREPROYECTO` por el nombre del proyecto actual.
 
 5. Ir a Propiedades del proyecto -> Linker -> System -> SubSystem
-   - Seleccionar 'Windows (/SUBSYSTEM:WINDOWS)'
+   - Seleccionar `Windows (/SUBSYSTEM:WINDOWS)`
 6. Ir a Propiedades del proyecto -> Linker -> Advanced -> EntryPoint
-   - Escribir 'main'
+   - Escribir `main`
 
