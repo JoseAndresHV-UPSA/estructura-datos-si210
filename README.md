@@ -35,7 +35,7 @@ int main(array<String^>^ arg)
 	return 0;
 }
 ```
-Nota: Cambiar NOMBREPROYECTO por el nombre del proyecto actual.
+Nota: Cambiar `NOMBREPROYECTO` por el nombre del proyecto actual.
 
 5. Ir a Propiedades del proyecto -> Linker -> System -> SubSystem
    - Seleccionar 'Windows (/SUBSYSTEM:WINDOWS)'
