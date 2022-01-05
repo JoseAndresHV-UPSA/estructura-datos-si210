@@ -1,4 +1,0 @@
-C:\Users\josea\source\repos\MATRICES\Debug\MATRICES.vcxproj.AssemblyReference.cache
-C:\Users\josea\source\repos\MATRICES\Debug\MATRICES.MyForm.resources
-C:\Users\josea\source\repos\MATRICES\Debug\MATRICES.vcxproj.GenerateResource.cache
-C:\Users\josea\source\repos\MATRICES\Debug\MATRICES.exe
