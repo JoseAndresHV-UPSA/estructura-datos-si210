@@ -1,22 +1,43 @@
-#include "pch.h"
 #include "Nodo.h"
-
-int Nodo::getDato()
-{
-    return dato;
-}
-
-void Nodo::setDato(int v)
-{
-    dato = v;
-}
 
 Nodo::Nodo(void)
 {
-    dato = -1;
+	dato = -1;
+	nombre = "";
 }
 
-Nodo::Nodo(int d)
+Nodo::Nodo(int d, string n)
 {
-    dato = d;
+	dato = d;
+	nombre = n;
+}
+
+int Nodo::getDato()
+{
+	return dato;
+}
+
+void Nodo::setDato(int val)
+{
+	dato = val;
+}
+
+string Nodo::getNombre()
+{
+	return nombre;
+}
+
+void Nodo::setNombre(int val)
+{
+	nombre = val;
+}
+
+Nodo Nodo::thisNodo()
+{
+	return *this;
+}
+
+void Nodo::thisNodo(Nodo nodo)
+{
+	*this = nodo;
 }

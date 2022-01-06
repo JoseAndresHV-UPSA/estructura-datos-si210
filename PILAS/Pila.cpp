@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "Pila.h"
 
 Pila::Pila(void)
@@ -28,18 +27,16 @@ bool Pila::insertar(Nodo n)
 
 	tope++;
 	p[tope] = n;
-
 	return true;
 }
 
 bool Pila::eliminar(Nodo& n)
 {
-	if (vacia())
+	if(vacia())
 		return false;
 
 	n = p[tope];
 	tope--;
-
 	return true;
 }
 
