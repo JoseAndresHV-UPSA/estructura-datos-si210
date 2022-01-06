@@ -27,7 +27,7 @@ Para la creación del proyecto en Visual Studio:
 using namespace NOMBREPROYECTO;
 
 [STAThread]
-int main(array<String^>^ arg)
+int main(cli::array<String^>^ arg)
 {
 	Application::EnableVisualStyles();
 	Application::SetCompatibleTextRenderingDefault(false);
