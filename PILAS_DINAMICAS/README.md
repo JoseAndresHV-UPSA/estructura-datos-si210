@@ -1,0 +1,5 @@
+## Clases Utilizadas
+- Nodo: [Nodo.h](https://github.com/JoseAndresHV-UPSA/estructura-datos-si210/blob/master/PILAS_DINAMICAS/Nodo.h) | [Nodo.cpp](https://github.com/JoseAndresHV-UPSA/estructura-datos-si210/blob/master/PILAS_DINAMICAS/Nodo.cpp)
+- PilaDinamica: [PilaDinamica.h](https://github.com/JoseAndresHV-UPSA/estructura-datos-si210/blob/master/PILAS_DINAMICAS/Pila.h) | [PilaDinamica.cpp](https://github.com/JoseAndresHV-UPSA/estructura-datos-si210/blob/master/PILAS_DINAMICAS/Pila.cpp)
+- Operaciones: [Operaciones.h](https://github.com/JoseAndresHV-UPSA/estructura-datos-si210/blob/master/PILAS_DINAMICAS/Operaciones.h) | [Operaciones.cpp](https://github.com/JoseAndresHV-UPSA/estructura-datos-si210/blob/master/PILAS_DINAMICAS/Operaciones.cpp)
+- Form: [MyForm.h](https://github.com/JoseAndresHV-UPSA/estructura-datos-si210/blob/master/PILAS_DINAMICAS/MyForm.h) | Form: [MyForm.h](https://github.com/JoseAndresHV-UPSA/estructura-datos-si210/blob/master/PILAS_DINAMICAS/MyForm.cpp)
