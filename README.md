@@ -5,11 +5,11 @@
 - [Vectores](https://github.com/JoseAndresHV-UPSA/estructura-datos-si210/tree/master/VECTORES)
 - [Matrices](https://github.com/JoseAndresHV-UPSA/estructura-datos-si210/tree/master/MATRICES)
 - [Pilas](https://github.com/JoseAndresHV-UPSA/estructura-datos-si210/tree/master/PILAS)
-- [Pilas Dinámicas]()
+- [Pilas Dinámicas](https://github.com/JoseAndresHV-UPSA/estructura-datos-si210/tree/master/PILAS_DINAMICAS)
 - [Colas](https://github.com/JoseAndresHV-UPSA/estructura-datos-si210/tree/master/COLAS)
-- [Colas Circulares]()
-- [Colas Dinámicas]()
-- [Proyectos]()
+- [Colas Circulares](https://github.com/JoseAndresHV-UPSA/estructura-datos-si210/tree/master/COLAS_CIRCULARES)
+- [Colas Dinámicas](https://github.com/JoseAndresHV-UPSA/estructura-datos-si210/tree/master/COLAS_DINAMICAS)
+- [Proyectos](https://github.com/JoseAndresHV-UPSA/estructura-datos-si210/tree/master/PROYECTOS)
 
 ### Configuración para Visual Studio
 Para la instalación en Visual Studio Installer:
