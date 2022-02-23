@@ -13,7 +13,7 @@
 
 ### Configuración para Visual Studio
 Para la instalación en Visual Studio Installer:
-1. Seleccionar el Workloard `Desktop development with C++`
+1. Seleccionar el Workload `Desktop development with C++`
 2. Dentro de opcional marcar `C++/CLI support`
 
 Para la creación del proyecto en Visual Studio:
